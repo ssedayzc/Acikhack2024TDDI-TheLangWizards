@@ -6,9 +6,6 @@
 - **Duygu Analizi**: Her varlık için olumlu, olumsuz veya nötr duygu sonuçları sağlar.
   
 ## Kurulum ve Gereksinimler
-
-### Gereksinimler
-
 ### Gereksinimler
 - Python 3.7 veya üstü
 - FastAPI
