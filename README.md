@@ -1,16 +1,15 @@
 # Acikhack2024TDDI-TheLangWizards
-# Duygu Analizi API
-
-Bu API, kullanıcıdan gelen metni işleyerek varlıkları (şirket isimleri, hizmetler vb.) ve duygu analizi sonuçlarını döndürür. API, FastAPI kullanılarak geliştirilmiştir ve BERT tabanlı bir sınıflandırıcı ile duygu analizini gerçekleştirir.
 
 ## Temel Özellikler
 
 - **Varlık Çıkartma**: Metinden özel şirket isimlerini ve hizmet isimlerini tanır.
 - **Duygu Analizi**: Her varlık için olumlu, olumsuz veya nötr duygu sonuçları sağlar.
+  
 ## Kurulum ve Gereksinimler
 
 ### Gereksinimler
 
+### Gereksinimler
 - Python 3.7 veya üstü
 - FastAPI
 - Uvicorn
@@ -27,3 +26,63 @@ Bu API, kullanıcıdan gelen metni işleyerek varlıkları (şirket isimleri, hi
 
    ```bash
    pip install fastapi uvicorn stanza transformers torch pydantic
+
+# Duygu Analizi ve Varlık Çıkarımı API
+
+Bu API, kullanıcıdan gelen metni işleyerek varlıkları (şirket isimleri, hizmetler vb.) ve duygu analizi sonuçlarını döndürür. API, duygu analizi ve varlık çıkarımı için FastAPI tabanlı bir hizmet sağlar. Hugging Face'ten `distilbert-base-uncased-finetuned-sst-2-english` modelini duygu analizi için ve Stanza'dan Türkçe modelini varlık çıkarımı için kullanır.
+
+## İçindekiler
+
+- [Model Detayları](#model-detayları)
+- [Proje Kurulumu](#proje-kurulumu)
+- [Kullanım](#kullanım)
+- [API Uç Noktaları](#api-uç-noktaları)
+
+## Model Detayları
+
+### Duygu Analizi
+
+`distilbert-base-uncased-finetuned-sst-2-english` modeli, Stanford Sentiment Treebank (SST-2) veri kümesinde ince ayar yapılmış, BERT'in damıtılmış bir versiyonudur. Bu model, tam BERT modeline kıyasla daha az parametre ve daha hızlı çıkarım süreleri ile duygu analizi görevlerinde son teknoloji performans sağlar.
+
+Model hakkında daha fazla bilgi için [Hugging Face model sayfasını](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english) ziyaret edin.
+
+### Varlık Çıkarımı
+
+Varlık çıkarımı fonksiyonu, dilbilimsel analiz için doğru ve verimli araçlar koleksiyonu olan Stanza'dan Türkçe modelini kullanır. Stanza kütüphanesi birçok dili destekler ve adlandırılmış varlık tanıma (NER) gibi çeşitli NLP görevleri için sağlam modeller sağlar.
+
+Stanza kütüphanesi hakkında daha fazla bilgi için [Stanza GitHub deposunu](https://github.com/stanfordnlp/stanza) ziyaret edin.
+
+## Proje Kurulumu
+
+### Kurulum
+
+1. Depoyu klonlayın:
+
+    ```bash
+    git clone https://github.com/your-username/sentiment-entity-extraction-api.git
+    cd sentiment-entity-extraction-api
+    ```
+
+2. Gerekli paketleri yükleyin:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. Stanza Türkçe modelini indirin ve başlatın:
+
+    ```python
+    import stanza
+    stanza.download('tr')
+    ```
+
+4. Eğitilmiş BERT model dosyasının (`finetuned_BERT.pth`) uygun dizinde (`content/drive/My Drive/`) olduğundan emin olun.
+
+## Kullanım
+
+FastAPI uygulamasını çalıştırmak için aşağıdaki komutu yürütün:
+
+```bash
+uvicorn main:app --reload
+
+
