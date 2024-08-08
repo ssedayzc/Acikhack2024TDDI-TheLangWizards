@@ -85,4 +85,40 @@ FastAPI uygulamasını çalıştırmak için aşağıdaki komutu yürütün:
 ```bash
 uvicorn main:app --reload
 
+Bu, sunucuyu http://127.0.0.1:7000 adresinde başlatacaktır.
+
+API Uç Noktaları
+POST /predict/
+Giriş metninin duygu analizini yapar ve varlıkları tanımlar.
+
+İstek Gövdesi
+text (string): Analiz edilecek metin.
+
+Örnek:
+{
+  "text": "Fiber 100mb SuperOnline kullanıcısıyım yaklaşık 2 haftadır @Twitch @Kick_Turkey gibi canlı yayın platformlarında 360p yayın izlerken donmalar yaşıyoruz. Başka hiç bir operatörler bu sorunu yaşamazken ben parasını verip alamadığım hizmeti neden ödeyeyim ? @Turkcell"
+}
+
+Yanıt:
+entity_list (list): Tanımlanan varlıkların listesi.
+results (list): Her varlık için duygu analizi sonuçları listesi.
+{
+  "entity_list": ["Turkcell", "Twitch", "Kick_Turkey"],
+  "results": [
+    {
+      "entity": "Turkcell",
+      "sentiment": "negative"
+    },
+    {
+      "entity": "Twitch",
+      "sentiment": "neutral"
+    },
+    {
+      "entity": "Kick_Turkey",
+      "sentiment": "neutral"
+    }
+  ]
+}
+
+
 
