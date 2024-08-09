@@ -104,15 +104,15 @@ results (list): Her varlık için duygu analizi sonuçları listesi.
   "results": [
     {
       "entity": "Turkcell",
-      "sentiment": "negative"
+      "sentiment": "Negatif"
     },
     {
       "entity": "Twitch",
-      "sentiment": "neutral"
+      "sentiment": "Nötr"
     },
     {
       "entity": "Kick_Turkey",
-      "sentiment": "neutral"
+      "sentiment": "Nötr"
     }
   ]
 }
