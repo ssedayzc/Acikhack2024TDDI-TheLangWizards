@@ -6,6 +6,9 @@
 - **Duygu Analizi**: Her varlık için olumlu, olumsuz veya nötr duygu sonuçları sağlar.
   
 ## Kurulum ve Gereksinimler
+
+[*MODEL DOSYALARI İÇİN AŞAĞIDAKİ LİNKİ KULLANABİLİRSİNİZ*](https://drive.google.com/drive/folders/1ozmciBea5HfWywOxG1wEkRz7Wjtgy1SA?usp=sharing)
+
 ### Gereksinimler
 - Python 3.7 veya üstü
 - FastAPI
@@ -33,7 +36,7 @@ Bu API, kullanıcıdan gelen metni işleyerek varlıkları (şirket isimleri, hi
 - [Model Detayları](#model-detayları)
 - [Proje Kurulumu](#proje-kurulumu)
 - [Kullanım](#kullanım)
-- [API Uç Noktaları](#api-uç-noktaları)
+- [Demo](#demo)
 
 ## Model Detayları
 
@@ -84,7 +87,7 @@ uvicorn main:app --reload
 
 Bu, sunucuyu http://127.0.0.1:7000 adresinde başlatacaktır.
 
-API Uç Noktaları
+Demo
 POST /predict/
 Giriş metninin duygu analizini yapar ve varlıkları tanımlar.
 
@@ -118,6 +121,3 @@ results (list): Her varlık için duygu analizi sonuçları listesi.
 }
 
 
-*MODEL DOSYALARI İÇİN AŞAĞIDAKİ LİNKİ KULLANABİLİRSİNİZ*
-
-https://drive.google.com/drive/folders/1ozmciBea5HfWywOxG1wEkRz7Wjtgy1SA?usp=sharing
