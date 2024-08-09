@@ -118,4 +118,6 @@ results (list): Her varlık için duygu analizi sonuçları listesi.
 }
 
 
+*MODEL DOSYALARI İÇİN AŞAĞIDAKİ LİNKİ KULLANABİLİRSİNİZ*
 
+https://drive.google.com/drive/folders/1ozmciBea5HfWywOxG1wEkRz7Wjtgy1SA?usp=sharing
